@@ -1,0 +1,20 @@
+name: AI Infrastructure Summary
+on: [pull_request]
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Terraform Plan
+        run: |
+          terraform init
+          terraform plan -no-color > plan_output.txt
+      - name: Run AI Summary
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python ai_summarizer.py > ai_summary.md
+      - name: Comment on PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          filePath: ai_summary.md
