@@ -40,7 +40,7 @@ Add the following step to your existing Terraform GitHub Action:
 
 YAML
 
-- name: 🛰️ Run PlanSight AI
+- name:  Run PlanSight AI
   env:
     OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
   run: |
