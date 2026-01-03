@@ -1,1 +1,1 @@
-# PlanSight-AI
+# PlanSight AI: An autonomous DevOps Agent that transforms verbose Terraform plans into actionable business insights using OpenAI GPT-4o. Features automated cost-risk assessment, security guardrails, and PR-integrated summaries.
